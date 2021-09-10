@@ -82,7 +82,46 @@ class App extends React.Component {
     const isDropDisabled = gameState === GAME_STATE.DONE;
 
     return (
-      <>
+      <div className="bg-gray-500 md:px-64 pt-32">
+        <div className="grid grid-cols-4">
+          <div className="bg-blue-500 h-32">
+          </div>
+          <div className="bg-green-500 h-32">
+
+          </div>
+          <div className="bg-red-500 h-32">
+
+          </div>
+          <div className="bg-yellow-500 h-32">
+
+          </div>
+        </div>
+        <div className="grid grid-cols-4">
+          <div className="bg-green-500 h-32">
+          </div>
+          <div className="bg-red-500 h-32">
+
+          </div>
+          <div className="bg-yellow-500 h-32">
+
+          </div>
+          <div className="bg-blue-500 h-32">
+
+          </div>
+        </div>
+        <div className="grid grid-cols-4">
+          <div className="bg-red-500 h-32">
+          </div>
+          <div className="bg-yellow-500 h-32">
+
+          </div>
+          <div className="bg-blue-500 h-32">
+
+          </div>
+          <div className="bg-green-500 h-32">
+
+          </div>
+        </div>
         {/* <Header gameState={gameState} timeLeft={timeLeft} endGame={this.endGame} />
         {this.state.gameState !== GAME_STATE.PLAYING && (
           <Modal
@@ -131,7 +170,7 @@ class App extends React.Component {
         </DragDropContext>
         {/* )} */}
         <Footer />
-      </>
+      </div>
     );
   }
 
