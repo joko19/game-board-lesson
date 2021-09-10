@@ -85,54 +85,54 @@ class App extends React.Component {
       <div className="bg-gradient-to-r from-yellow-400 via-red-500 to-pink-500 md:px-64 pt-32">
 
         <DragDropContext onDragEnd={this.onDragEnd}>
-          <div className="bg-red-500">
-            <Dropzone id="bench" heroes={bench} isDropDisabled={isDropDisabled} />
-          </div>
-          <div className="grid grid-cols-4">
-            <div className="bg-blue-500 h-32">
+          {/* <div className="bg-red-500"> */}
+            {/* <Dropzone id="bench" heroes={bench} isDropDisabled={isDropDisabled} /> */}
+          {/* </div> */}
+          <div className="grid grid-cols-4 border-4 border-black">
+            <div className="bg-blue-500 h-32 border-4 border-black">
               <Dropzone
                 id={COMICS.JawaTimur}
                 heroes={this.state[COMICS.JawaTimur]}
                 isDropDisabled={isDropDisabled}
               />
             </div>
-            <div className="bg-green-500 h-32 one">
+            <div className="bg-green-500 h-32 one border-4 border-black">
               <Dropzone
                 id={COMICS.JawaTimur}
                 heroes={this.state[COMICS.JawaTimur]}
                 isDropDisabled={isDropDisabled}
               />
             </div>
-            <div className="bg-red-500 h-32">
+            <div className="bg-red-500 h-32 border-4 border-black">
 
             </div>
-            <div className="bg-yellow-500 h-32">
-
-            </div>
-          </div>
-          <div className="grid grid-cols-4">
-            <div className="bg-green-500 h-32">
-            </div>
-            <div className="bg-red-500 h-32">
-
-            </div>
-            <div className="bg-yellow-500 h-32">
-
-            </div>
-            <div className="bg-blue-500 h-32">
+            <div className="bg-yellow-500 h-32 one border-4 border-black">
 
             </div>
           </div>
-          <div className="grid grid-cols-4">
-            <div className="bg-red-500 h-32">
+          <div className="grid grid-cols-4 border-4 border-black">
+            <div className="bg-green-500 h-32 one border-4 border-black">
             </div>
-            <div className="bg-yellow-500 h-32">
+            <div className="bg-red-500 h-32 border-4 border-black">
 
             </div>
-            <div className="bg-blue-500 h-32">
+            <div className="bg-yellow-500 h-32 one border-4 border-black">
 
             </div>
-            <div className="bg-green-500 h-32">
+            <div className="bg-blue-500 h-32 border-4 border-black">
+
+            </div>
+          </div>
+          <div className="grid grid-cols-4 border-4 border-black">
+            <div className="bg-red-500 h-32 border-4 border-black">
+            </div>
+            <div className="bg-yellow-500 h-32 one border-4 border-black">
+
+            </div>
+            <div className="bg-blue-500 h-32 border-4 border-black">
+
+            </div>
+            <div className="bg-green-500 h-32 one border-4 border-black">
 
             </div>
           </div>
