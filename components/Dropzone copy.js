@@ -3,12 +3,12 @@ import { Droppable, Draggable } from 'react-beautiful-dnd';
 
 const Dropzone = ({ isDropDisabled, heroes, id }) => (
   <div className="" >
-    {/* <div className="divider" data-content={id.toUpperCase()} style={{width: 50, height: 100}} /> */}
-    <Droppable droppableId={id} isDropDisabled={isDropDisabled} >
+    <div className="divider" data-content={id.toUpperCase()} style={{width: 50, height: 100}} />
+    <Droppable droppableId={id} isDropDisabled={isDropDisabled}>
       {provided => {
         return (
-          <div className="flex flex-cols"  {...provided.droppableProps} ref={provided.innerRef} >
-            {/* {id} */}
+          <div className="menu hero-list" style={{border: '2px solid black', height: 250, width: 250}} {...provided.droppableProps} ref={provided.innerRef} >
+            {id}
             {heroes.map(({ name }, index) => (
               <Hero key={name} name={name} index={index} />
             ))}
@@ -30,9 +30,9 @@ const Hero = ({ name, index }) => (
           {...provided.draggableProps}
           {...provided.dragHandleProps}
         >
-          {/* <figure className="avatar tile-icon"> */}
-            <img src="https://upload.wikimedia.org/wikipedia/en/2/21/Web_of_Spider-Man_Vol_1_129-1.png" className="w-16 m-4" alt={name} />
-          {/* </figure> */}
+          <figure style={{  display: 'inline-block', border: '3px solid blue' }} className="avatar tile-icon">
+            <img src="https://upload.wikimedia.org/wikipedia/en/2/21/Web_of_Spider-Man_Vol_1_129-1.png" style={{width: 50, display: 'inline-block'}} alt={name} />
+          </figure>
           {/* <div className="tile-content">{name}</div> */}
         </div>
       );

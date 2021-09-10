@@ -38,3 +38,9 @@ footer {
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.one{
+  object-fit: 'cover';
+  background-size: 100% 100%;
+  background-image: url('https://i.pinimg.com/originals/19/c5/66/19c566b67e4a8a6f30f88122bd06a890.jpg');
+}

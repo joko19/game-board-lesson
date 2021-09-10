@@ -82,46 +82,61 @@ class App extends React.Component {
     const isDropDisabled = gameState === GAME_STATE.DONE;
 
     return (
-      <div className="bg-gray-500 md:px-64 pt-32">
-        <div className="grid grid-cols-4">
-          <div className="bg-blue-500 h-32">
-          </div>
-          <div className="bg-green-500 h-32">
+      <div className="bg-gradient-to-r from-yellow-400 via-red-500 to-pink-500 md:px-64 pt-32">
 
+        <DragDropContext onDragEnd={this.onDragEnd}>
+          <div className="bg-red-500">
+            <Dropzone id="bench" heroes={bench} isDropDisabled={isDropDisabled} />
           </div>
-          <div className="bg-red-500 h-32">
+          <div className="grid grid-cols-4">
+            <div className="bg-blue-500 h-32">
+              <Dropzone
+                id={COMICS.JawaTimur}
+                heroes={this.state[COMICS.JawaTimur]}
+                isDropDisabled={isDropDisabled}
+              />
+            </div>
+            <div className="bg-green-500 h-32 one">
+              <Dropzone
+                id={COMICS.JawaTimur}
+                heroes={this.state[COMICS.JawaTimur]}
+                isDropDisabled={isDropDisabled}
+              />
+            </div>
+            <div className="bg-red-500 h-32">
 
-          </div>
-          <div className="bg-yellow-500 h-32">
+            </div>
+            <div className="bg-yellow-500 h-32">
 
+            </div>
           </div>
-        </div>
-        <div className="grid grid-cols-4">
-          <div className="bg-green-500 h-32">
-          </div>
-          <div className="bg-red-500 h-32">
+          <div className="grid grid-cols-4">
+            <div className="bg-green-500 h-32">
+            </div>
+            <div className="bg-red-500 h-32">
 
-          </div>
-          <div className="bg-yellow-500 h-32">
+            </div>
+            <div className="bg-yellow-500 h-32">
 
-          </div>
-          <div className="bg-blue-500 h-32">
+            </div>
+            <div className="bg-blue-500 h-32">
 
+            </div>
           </div>
-        </div>
-        <div className="grid grid-cols-4">
-          <div className="bg-red-500 h-32">
-          </div>
-          <div className="bg-yellow-500 h-32">
+          <div className="grid grid-cols-4">
+            <div className="bg-red-500 h-32">
+            </div>
+            <div className="bg-yellow-500 h-32">
 
-          </div>
-          <div className="bg-blue-500 h-32">
+            </div>
+            <div className="bg-blue-500 h-32">
 
-          </div>
-          <div className="bg-green-500 h-32">
+            </div>
+            <div className="bg-green-500 h-32">
 
+            </div>
           </div>
-        </div>
+        </DragDropContext>
         {/* <Header gameState={gameState} timeLeft={timeLeft} endGame={this.endGame} />
         {this.state.gameState !== GAME_STATE.PLAYING && (
           <Modal
@@ -135,39 +150,39 @@ class App extends React.Component {
         {/* {(this.state.gameState === GAME_STATE.PLAYING ||
           this.state.gameState === GAME_STATE.DONE) && ( */}
 
-        <DragDropContext onDragEnd={this.onDragEnd}>
+        {/* <DragDropContext onDragEnd={this.onDragEnd}> */}
+        <div>
           <div>
-            <div>
-              {/* <h3>Jawa Barat</h3> */}
-              <Dropzone
+            {/* <h3>Jawa Barat</h3> */}
+            {/* <Dropzone
                 id={COMICS.JawaTimur}
                 heroes={this.state[COMICS.JawaTimur]}
                 isDropDisabled={isDropDisabled}
-              />
-            </div>
-            <div style={{ display: 'inline' }}>
-              {/* <h3>Jawa Tengah</h3> */}
-              <Dropzone
+              /> */}
+          </div>
+          <div style={{ display: 'inline' }}>
+            {/* <h3>Jawa Tengah</h3> */}
+            {/* <Dropzone
                 id={COMICS.MARVEL}
                 heroes={this.state[COMICS.MARVEL]}
                 isDropDisabled={isDropDisabled}
-              />
-            </div>
-            <div style={{ display: 'inline' }}>
-              {/* <h3>Jawa Timur</h3> */}
-              <Dropzone
+              /> */}
+          </div>
+          <div style={{ display: 'inline' }}>
+            {/* <h3>Jawa Timur</h3> */}
+            {/* <Dropzone
                 id={COMICS.DC}
                 heroes={this.state[COMICS.DC]}
                 isDropDisabled={isDropDisabled}
-              />
-            </div>
-            {/* </div> */}
+              /> */}
           </div>
+          {/* </div> */}
+        </div>
 
-          <div style={{ border: '5px solid red' }}>
-            <Dropzone id="bench" heroes={bench} isDropDisabled={isDropDisabled} />
-          </div>
-        </DragDropContext>
+        <div style={{ border: '5px solid red' }}>
+          {/* <Dropzone id="bench" heroes={bench} isDropDisabled={isDropDisabled} /> */}
+        </div>
+        {/* </DragDropContext> */}
         {/* )} */}
         <Footer />
       </div>
