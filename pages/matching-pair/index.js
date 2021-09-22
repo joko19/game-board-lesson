@@ -16,9 +16,9 @@ const GAME_DURATION = 1000 * 30; // 30 seconds
 const initialState = {
   // we initialize the state by populating the bench with a shuffled collection of heroes
   bench: shuffle(HEROES),
-  [COMICS.DC]: [],
-  [COMICS.MARVEL]: [],
-  [COMICS.JawaTimur]: [],
+  [COMICS.remo]: [],
+  [COMICS.reog]: [],
+  [COMICS.remo]: [],
   gameState: 'playing',
   timeLeft: 0,
 };
@@ -86,20 +86,20 @@ class App extends React.Component {
 
         <DragDropContext onDragEnd={this.onDragEnd}>
           {/* <div className="bg-red-500"> */}
-            {/* <Dropzone id="bench" heroes={bench} isDropDisabled={isDropDisabled} /> */}
+            <Dropzone id="bench" heroes={bench} isDropDisabled={isDropDisabled} />
           {/* </div> */}
           <div className="grid grid-cols-4 border-4 border-black">
             <div className="bg-blue-500 h-32 border-4 border-black">
               <Dropzone
-                id={COMICS.JawaTimur}
-                heroes={this.state[COMICS.JawaTimur]}
+                id={COMICS.reog}
+                heroes={this.state[COMICS.reog]}
                 isDropDisabled={isDropDisabled}
               />
             </div>
             <div className="bg-green-500 h-32 one border-4 border-black">
               <Dropzone
-                id={COMICS.JawaTimur}
-                heroes={this.state[COMICS.JawaTimur]}
+                id={COMICS.remo}
+                heroes={this.state[COMICS.remo]}
                 isDropDisabled={isDropDisabled}
               />
             </div>

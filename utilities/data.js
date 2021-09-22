@@ -1,20 +1,26 @@
 export const COMICS = {
   DC: 'dc',
   MARVEL: 'marvel',
-  JawaTimur: 'Jatim'
+  JawaTimur: 'Jatim',
+  remo: 'Tari Remo',
+  reog: 'Reog Ponorogo'
 };
 
 export const HEROES = [
   {
-    name: 'Superman',
-    comics: 'dc',
+    name: 'Tari Piring',
+    comics: 'tari piring',
   },
   {
-    name: 'Iron Man',
-    comics: 'marvel',
+    name: 'Reog Ponorogo',
+    comics: 'reog',
   },
   {
     name: 'Tari Remo',
-    comics: 'Jatim',
+    comics: 'remo',
+  },
+  {
+    name: 'Tari Kecak',
+    comics: 'Tari Kecak',
   },
 ];

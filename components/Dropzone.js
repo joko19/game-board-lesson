@@ -31,9 +31,9 @@ const Hero = ({ name, index }) => (
           {...provided.dragHandleProps}
         >
           {/* <figure className="avatar tile-icon"> */}
-            <img src="https://upload.wikimedia.org/wikipedia/en/2/21/Web_of_Spider-Man_Vol_1_129-1.png" className="w-16 m-4" alt={name} />
+            {/* <img src="https://upload.wikimedia.org/wikipedia/en/2/21/Web_of_Spider-Man_Vol_1_129-1.png" className="w-16 m-4" alt={name} /> */}
           {/* </figure> */}
-          {/* <div className="tile-content">{name}</div> */}
+          <div className="font-bold bg-white m-2 p-1 rounded-lg">{name}</div>
         </div>
       );
     }}
