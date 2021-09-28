@@ -7,7 +7,11 @@ import MatchingPair from './matching-pair/index'
 export default function Home() {
   return (
     <div>
-      <MatchingPair />
+      <h1>Game Board Lesson</h1>
+      <Link href="/matching-game">
+        <a>testing</a>
+      </Link>
+      {/* <MatchingPair /> */}
     </div>
   )
 }
