@@ -1,9 +1,8 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { DragDropContext } from 'react-beautiful-dnd';
 
 import { Droppable, Draggable } from 'react-beautiful-dnd';
-
-import { HEROES, COMICS } from './../../utilities/data';
+import { HEROES, COMICS, ASAL, TARIAN } from './../../utilities/data';
 import { shuffle, getTimeLeft, move, GAME_STATE } from './../../utilities/utils';
 
 import Modal from './../../components/Modal';
@@ -15,10 +14,16 @@ const GAME_DURATION = 1000 * 30; // 30 seconds
 
 const initialState = {
   // we initialize the state by populating the bench with a shuffled collection of heroes
-  bench: shuffle(HEROES),
+  bench: shuffle(TARIAN),
   [COMICS.remo]: [],
   [COMICS.reog]: [],
   [COMICS.remo]: [],
+  [ASAL.BALI]:[],
+  [ASAL.JABAR]:[],
+  [ASAL.JAKARTA]:[],
+  [ASAL.JATIM]:[],
+  [ASAL.ACEH]:[],
+  
   gameState: 'playing',
   timeLeft: 0,
 };
@@ -85,26 +90,33 @@ class App extends React.Component {
       <div className="bg-gradient-to-r from-yellow-400 via-red-500 to-pink-500 md:px-64 pt-32">
 
         <DragDropContext onDragEnd={this.onDragEnd}>
-          {/* <div className="bg-red-500"> */}
-            <Dropzone id="bench" heroes={bench} isDropDisabled={isDropDisabled} />
-          {/* </div> */}
+          <div className="bg-white">
+          <Dropzone id="bench" tarian={bench} isDropDisabled={isDropDisabled} />
+          </div>
           <div className="grid grid-cols-4 border-4 border-black">
             <div className="bg-blue-500 h-32 border-4 border-black">
-              <Dropzone
-                id={COMICS.reog}
-                heroes={this.state[COMICS.reog]}
+
+            <Dropzone
+                id={ASAL.BALI}
+                tarian={this.state[ASAL.BALI]}
                 isDropDisabled={isDropDisabled}
               />
             </div>
             <div className="bg-green-500 h-32 one border-4 border-black">
-              <Dropzone
-                id={COMICS.remo}
-                heroes={this.state[COMICS.remo]}
+
+            <Dropzone
+                id={ASAL.JATIM}
+                tarian={this.state[ASAL.JATIM]}
                 isDropDisabled={isDropDisabled}
               />
             </div>
             <div className="bg-red-500 h-32 border-4 border-black">
 
+              <Dropzone
+                id={ASAL.JAKARTA}
+                tarian={this.state[ASAL.JAKARTA]}
+                isDropDisabled={isDropDisabled}
+              />
             </div>
             <div className="bg-yellow-500 h-32 one border-4 border-black">
 
@@ -217,3 +229,75 @@ export default App;
 //     </>
 //   )
 // }
+
+
+
+
+function Apple() {
+  const listAsal ={
+    BALI: 'bali',
+    JATIM: 'jawa timur'
+  }
+  const listTarian = [
+    {
+      id: 'kecak',
+      name: 'Tari Kecak'
+    },
+    {
+      id: 'remo',
+      name: 'Tari Remo'
+    },
+    {
+      id: 'merak',
+      name: 'Tari Merak'
+    },
+    {
+      id: 'reog',
+      name: 'Tari Reog'
+    },
+    {
+      id: 'jaipong',
+      name: 'Tari Jaipong'
+    }
+  ]
+  const [bali, setBali] = useState(listAsal.BALI)
+  const [kecak, setKecak] = useState([])
+  return (
+    <div className="bg-gradient-to-r from-yellow-400 via-red-500 to-pink-500 md:px-64 pt-32">
+      <DragDropContext>
+        <Droppable droppableId="tarian">
+          {(provided) => (
+            <ul {...provided.droppableProps} ref={provided.innerRef} style={{ backgroundColor: 'white', display: 'inline-block', padding: 10, margin: 10 }}>
+              {listTarian.map(({ id, name }, index) => {
+                return (
+                  <Draggable key={id} draggableId={id} index={index}>
+                    {(provided) => (
+                      <li key={id} ref={provided.innerRef} {...provided.draggableProps} {...provided.dragHandleProps}> {name} </li>
+                    )}
+                  </Draggable>)
+              })}
+              {provided.placeholder}
+            </ul>
+
+          )}
+        </Droppable>
+        {/* <Droppable droppableId="tarian">
+          {(provided) => (
+            <ul {...provided.droppableProps} ref={provided.innerRef} style={{ backgroundColor: 'white', display: 'inline-block', padding: 10, margin: 10 }}>
+              {kecak.map(({ id, name }, index) => {
+                return (
+                  <Draggable key={id} draggableId={id} index={index}>
+                    {(provided) => (
+                      <li key={id} ref={provided.innerRef} {...provided.draggableProps} {...provided.dragHandleProps}> {name} </li>
+                    )}
+                  </Draggable>)
+              })}
+              {provided.placeholder}
+            </ul>
+
+          )}
+        </Droppable> */}
+      </DragDropContext>
+    </div>
+  )
+}

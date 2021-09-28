@@ -1,15 +1,14 @@
 import React from 'react';
 import { Droppable, Draggable } from 'react-beautiful-dnd';
 
-const Dropzone = ({ isDropDisabled, heroes, id }) => (
-  <div className="" >
-    {/* <div className="divider" data-content={id.toUpperCase()} style={{width: 50, height: 100}} /> */}
-    <Droppable droppableId={id} isDropDisabled={isDropDisabled} >
+const Dropzone = ({ isDropDisabled, tarian, id }) => (
+  // <div className="column col-4">
+  //   <div className="divider" data-content={id.toUpperCase()} />
+    <Droppable droppableId={id} isDropDisabled={isDropDisabled}>
       {provided => {
         return (
-          <div className="flex flex-cols"  {...provided.droppableProps} ref={provided.innerRef} >
-            {/* {id} */}
-            {heroes.map(({ name }, index) => (
+          <div  style={{width: '100%', display: 'inline-block', padding: 10}} {...provided.droppableProps} ref={provided.innerRef}>
+            {tarian.map(({ name }, index) => (
               <Hero key={name} name={name} index={index} />
             ))}
             {provided.placeholder}
@@ -17,7 +16,7 @@ const Dropzone = ({ isDropDisabled, heroes, id }) => (
         );
       }}
     </Droppable>
-  </div>
+  // </div>
 );
 
 const Hero = ({ name, index }) => (
@@ -25,15 +24,11 @@ const Hero = ({ name, index }) => (
     {provided => {
       return (
         <div
-          style={{backgroundColor: '#303030', display: 'inline-block', border: '1px solid green'}}
           ref={provided.innerRef}
           {...provided.draggableProps}
           {...provided.dragHandleProps}
         >
-          {/* <figure className="avatar tile-icon"> */}
-            {/* <img src="https://upload.wikimedia.org/wikipedia/en/2/21/Web_of_Spider-Man_Vol_1_129-1.png" className="w-16 m-4" alt={name} /> */}
-          {/* </figure> */}
-          <div className="font-bold bg-white m-2 p-1 rounded-lg">{name}</div>
+          <div style={{backgroundColor: 'white', display: 'inline-block', padding: 2, margin: 2, borderRadius: 4}}>{name}</div>
         </div>
       );
     }}
